@@ -1,0 +1,49 @@
+{
+  "name": "@saleshandy/designs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf ./lib && tsc && npm run copy-files",
+    "copy-files": "copyfiles -u 1 src/**/*.scss src/**/*.svg src/**/*.ttf src/**/*.eot src/**/*.woff  lib/"
+  },
+  "author": "Dhruvil Gajjar <dhruvil@saleshandy.com> (https://github.com/dhruvilsaleshandy",
+  "contributors": [
+    "Dhruvil Gajjar <dhruvil@saleshandy.com> (https://github.com/dhruvilsaleshandy"
+  ],
+  "keywords": [
+    "react components",
+    "react bootstrap",
+    "saleshandy designs",
+    "saleshandy",
+    "design system"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saleshandy/saleshandy-designs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saleshandy/saleshandy-designs/issues"
+  },
+  "homepage": "https://github.com/saleshandy/saleshandy-designs",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.25",
+    "@types/react": "^18.0.6",
+    "@types/react-dom": "^18.0.2",
+    "copyfiles": "^2.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rimraf": "^3.0.2",
+    "tsc-hooks": "^1.1.1",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@seznam/compose-react-refs": "^1.0.6",
+    "bootstrap": "^4.6.0",
+    "classnames": "^2.3.1",
+    "node-sass": "^5.0.0",
+    "react-bootstrap": "^1.5.2"
+  }
+}

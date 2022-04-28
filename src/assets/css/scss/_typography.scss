@@ -1,0 +1,137 @@
+.lfloat {
+  float: $lfloat;
+}
+.rfloat {
+  float: $rfloat;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $heading-color;
+}
+h1 {
+  font-size: $heading-1;
+  line-height: $text-style-5-line-height;
+  font-weight: $font-weight-semibold;
+}
+h2 {
+  font-size: $heading-2;
+  line-height: $text-style-4-line-height;
+  font-weight: $font-weight-normal;
+}
+h3 {
+  font-size: $heading-3;
+  line-height: $text-style-3-line-height;
+  font-weight: $font-weight-normal;
+}
+h4 {
+  font-size: $heading-4;
+  line-height: $text-style-2-line-height;
+  font-weight: $font-weight-normal;
+}
+
+.regular-1 {
+  @include font-size($regular-1);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-1-line-height;
+}
+.regular-2 {
+  @include font-size($regular-2);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-2-line-height;
+}
+.regular-3 {
+  @include font-size($regular-3);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-3-line-height;
+}
+.regular-4 {
+  @include font-size($regular-4);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-4-line-height;
+}
+.regular-5 {
+  @include font-size($regular-5);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-5-line-height;
+}
+.regular-6 {
+  @include font-size($regular-6);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-6-line-height;
+}
+.regular-7 {
+  @include font-size($regular-7);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-7-line-height;
+}
+.regular-8 {
+  @include font-size($regular-8);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-8-line-height;
+}
+.regular-9 {
+  @include font-size($regular-9);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-9-line-height;
+}
+
+.semibold-1 {
+  @include font-size($semibold-1);
+  font-weight: $font-weight-semibold;
+  line-height: $text-style-1-line-height;
+}
+.semibold-2 {
+  @include font-size($semibold-2);
+  font-weight: $font-weight-semibold;
+  line-height: $text-style-2-line-height;
+}
+.semibold-3 {
+  @include font-size($semibold-3);
+  font-weight: $font-weight-semibold;
+  line-height: $text-style-3-line-height;
+}
+.semibold-4 {
+  @include font-size($semibold-4);
+  font-weight: $font-weight-semibold;
+  line-height: $text-style-4-line-height;
+}
+.semibold-5 {
+  @include font-size($semibold-5);
+  font-weight: $font-weight-semibold;
+  line-height: $text-style-5-line-height;
+}
+.semibold-6 {
+  @include font-size($semibold-6);
+  font-weight: $font-weight-semibold;
+  line-height: $text-style-6-line-height;
+}
+.semibold-7 {
+  @include font-size($semibold-7);
+  font-weight: $font-weight-semibold;
+  line-height: $text-style-7-line-height;
+}
+.semibold-8 {
+  @include font-size($semibold-8);
+  font-weight: $font-weight-semibold;
+  line-height: $text-style-8-line-height;
+}
+.semibold-9 {
+  @include font-size($semibold-9);
+  font-weight: $font-weight-semibold;
+  line-height: $text-style-9-line-height;
+}
+
+.semibold-10 {
+  @include font-size($semibold-2);
+  font-weight: $font-weight-normal;
+  line-height: $text-style-1-line-height;
+}
+
+.semibold-11 {
+  @include font-size($semibold-1);
+  font-weight: $font-weight-normal;
+  line-height: $text-14;
+}

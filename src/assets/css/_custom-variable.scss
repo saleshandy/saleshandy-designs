@@ -1,0 +1,607 @@
+/**
+Design CSS Guide
+Override Bootstrap Varibles
+ 
+1.  Color Palette
+2.  Typography
+3.  Button
+      3.1 Solid Button
+      3.2 Ghost Button
+4.  Border Radius
+5.  Breadcrumb
+6.  Dropdown
+7.  Pagination
+8.  Input/Input Number/Textarea
+9.  Progress circle
+10. Media Query  
+11. New used colors
+**. Margin/Padding
+*/
+
+// 1. Color Palette start ///////////////////////////////////
+$white-text: #fff !default;
+$blue-1: #e6f7ff !default;
+$blue-2: #bae7ff !default;
+$blue-3: #9ad0ff !default;
+$blue-4: #80b6ff !default;
+$blue-5: #346aff !default;
+$blue-6: #0137fc !default;
+$blue-7: #0004c9 !default;
+$blue-8: #000096 !default;
+$blue-9: #00007d !default;
+$blue-10: #000063 !default;
+
+$gray-1: #ffffff !default;
+$gray-2: #fafafa !default;
+$gray-3: #f5f5f5 !default;
+$gray-4: #e8e8e8 !default;
+$gray-5: #d9d9d9 !default;
+$gray-6: #bfbfbf !default;
+$gray-7: #8c8c8c !default;
+$gray-8: #595959 !default;
+$gray-9: #262626 !default;
+$gray-10: #000000 !default;
+
+$red-1: #fff1f0 !default;
+$red-2: #ffccc7 !default;
+$red-3: #ffa39e !default;
+$red-4: #ff7875 !default;
+$red-5: #ff4d4f !default;
+$red-6: #f5222d !default;
+$red-7: #cf1322 !default;
+$red-8: #a8071a !default;
+$red-9: #820014 !default;
+$red-10: #5c0011 !default;
+
+$volcano-1: #fff2e8 !default;
+$volcano-2: #ffd8bf !default;
+$volcano-3: #ffbb96 !default;
+$volcano-4: #ff9c6e !default;
+$volcano-5: #ff7a45 !default;
+$volcano-6: #fa541c !default;
+$volcano-7: #d4380d !default;
+$volcano-8: #ad2102 !default;
+$volcano-9: #871400 !default;
+$volcano-10: #610b00 !default;
+
+$orange-1: #fff7e6 !default;
+$orange-2: #ffe7ba !default;
+$orange-3: #ffd591 !default;
+$orange-4: #ffc069 !default;
+$orange-5: #ffa940 !default;
+$orange-6: #fa8c16 !default;
+$orange-7: #d46b08 !default;
+$orange-8: #ad4e00 !default;
+$orange-9: #873800 !default;
+$orange-10: #612500 !default;
+
+$gold-1: #fffbe6 !default;
+$gold-2: #fff1b8 !default;
+$gold-3: #ffe58f !default;
+$gold-4: #ffd666 !default;
+$gold-5: #ffc53d !default;
+$gold-6: #faad14 !default;
+$gold-7: #d48806 !default;
+$gold-8: #ad6800 !default;
+$gold-9: #874d00 !default;
+$gold-10: #613400 !default;
+
+$yellow-1: #feffe6 !default;
+$yellow-2: #ffffb8 !default;
+$yellow-3: #fffb8f !default;
+$yellow-4: #fff566 !default;
+$yellow-5: #ffec3d !default;
+$yellow-6: #fadb14 !default;
+$yellow-7: #d4b106 !default;
+$yellow-8: #ad8b00 !default;
+$yellow-9: #876800 !default;
+$yellow-10: #614700 !default;
+
+$lime-1: #fcffe6 !default;
+$lime-2: #f4ffb8 !default;
+$lime-3: #eaff8f !default;
+$lime-4: #d3f261 !default;
+$lime-5: #bae637 !default;
+$lime-6: #a0d911 !default;
+$lime-7: #7cb305 !default;
+$lime-8: #5b8c00 !default;
+$lime-9: #3f6600 !default;
+$lime-10: #254000 !default;
+
+$green-1: #f6ffed !default;
+$green-2: #d9f7be !default;
+$green-3: #b7eb8f !default;
+$green-4: #95de64 !default;
+$green-5: #73d13d !default;
+$green-6: #52c41a !default;
+$green-7: #389e0d !default;
+$green-8: #237804 !default;
+$green-9: #135200 !default;
+$green-10: #092b00 !default;
+
+$cyan-1: #e6fffb !default;
+$cyan-2: #b5f5ec !default;
+$cyan-3: #87e8de !default;
+$cyan-4: #5cdbd3 !default;
+$cyan-5: #36cfc9 !default;
+$cyan-6: #13c2c2 !default;
+$cyan-7: #08979c !default;
+$cyan-8: #006d75 !default;
+$cyan-9: #00474f !default;
+$cyan-10: #002329 !default;
+
+$geekblue-1: #f0f5ff !default;
+$geekblue-2: #d6e4ff !default;
+$geekblue-3: #adc6ff !default;
+$geekblue-4: #85a5ff !default;
+$geekblue-5: #597ef7 !default;
+$geekblue-6: #2f54eb !default;
+$geekblue-7: #1d39c4 !default;
+$geekblue-8: #10239e !default;
+$geekblue-9: #061178 !default;
+$geekblue-10: #030852 !default;
+
+$purple-1: #f9f0ff !default;
+$purple-2: #efdbff !default;
+$purple-3: #d3adf7 !default;
+$purple-4: #b37feb !default;
+$purple-5: #9254de !default;
+$purple-6: #722ed1 !default;
+$purple-7: #531dab !default;
+$purple-8: #391085 !default;
+$purple-9: #22075e !default;
+$purple-10: #120338 !default;
+
+$magenta-1: #fff0f6 !default;
+$magenta-2: #ffd6e7 !default;
+$magenta-3: #ffadd2 !default;
+$magenta-4: #ff85c0 !default;
+$magenta-5: #f759ab !default;
+$magenta-6: #eb2f96 !default;
+$magenta-7: #c41d7f !default;
+$magenta-8: #9e1068 !default;
+$magenta-9: #780650 !default;
+$magenta-10: #520339 !default;
+
+$indigo-1: #eef2ff;
+$indigo-2: #e0e7ff;
+$indigo-3: #c7d2fe;
+$indigo-4: #a5b4fc;
+$indigo-5: #818cf8;
+$indigo-6: #6366f1;
+$indigo-7: #4f46e5;
+$indigo-8: #4338ca;
+$indigo-9: #3730a3;
+$indigo-10: #312e81;
+
+// 1. Color Palette end ///////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 2. Custom Typography Start /////////////////////////////////
+
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: "Inter", sans-serif !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-weight-lighter: 200 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: 900 !default;
+
+$heading-1: 24px;
+$heading-2: 20px;
+$heading-3: 16px;
+$heading-4: 14px;
+$text-12: 12px;
+$text-14: 14px;
+$text-16: 16px;
+$text-18: 18px;
+$heading-color: #262626;
+$font-size-base: 1rem;
+
+$regular-1: $font-size-base * 0.75 !default;
+$regular-2: $font-size-base * 0.875 !default;
+$regular-3: $font-size-base * 1 !default;
+$regular-4: $font-size-base * 1.25 !default;
+$regular-5: $font-size-base * 1.5 !default;
+$regular-6: $font-size-base * 1.875 !default;
+$regular-7: $font-size-base * 2.375 !default;
+$regular-8: $font-size-base * 2.875 !default;
+$regular-9: $font-size-base * 3.5 !default;
+
+$semibold-1: $font-size-base * 0.75 !default;
+$semibold-2: $font-size-base * 0.875 !default;
+$semibold-3: $font-size-base * 1 !default;
+$semibold-4: $font-size-base * 1.25 !default;
+$semibold-5: $font-size-base * 1.5 !default;
+$semibold-6: $font-size-base * 1.875 !default;
+$semibold-7: $font-size-base * 2.375 !default;
+$semibold-8: $font-size-base * 2.875 !default;
+$semibold-9: $font-size-base * 3.5 !default;
+
+$text-style-1-line-height: 20px;
+$text-style-2-line-height: 22px;
+$text-style-3-line-height: 24px;
+$text-style-4-line-height: 28px;
+$text-style-5-line-height: 32px;
+$text-style-6-line-height: 38px;
+$text-style-7-line-height: 46px;
+$text-style-8-line-height: 54px;
+$text-style-9-line-height: 64px;
+
+$lfloat: left !default;
+$rfloat: right !default;
+// 2. Custom Typography End /////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 3. Button Custom Start/////////////////////////////////
+
+/////////////////// 3.1 Solid Buttons //////////////////////
+
+/////////// Default button
+
+$solid-df-bg: $gray-3;
+$solid-df-txt: $gray-8;
+$solid-df-bdr: $gray-3;
+
+$solid-df-hvr-bg: $gray-3;
+$solid-df-hvr-txt: $gray-8;
+$solid-df-hvr-bdr: $gray-3;
+
+$solid-df-fc-bg: $gray-3;
+$solid-df-fc-txt: $gray-8;
+$solid-df-fc-bdr: $gray-3;
+
+$solid-df-ac-bg: $gray-3;
+$solid-df-ac-txt: $gray-8;
+$solid-df-ac-bdr: $gray-3;
+
+$solid-df-ds-bg: $gray-3;
+$solid-df-ds-txt: $gray-6;
+$solid-df-ds-bdr: $gray-3;
+
+/////////// Primary button
+
+$solid-pr-bg: $blue-6;
+$solid-pr-txt: $gray-1;
+$solid-pr-bdr: $blue-6;
+
+$solid-pr-hvr-bg: $blue-5;
+$solid-pr-hvr-txt: $gray-1;
+$solid-pr-hvr-bdr: $blue-5;
+
+$solid-pr-fc-bg: $blue-5;
+$solid-pr-fc-txt: $gray-1;
+$solid-pr-fc-bdr: $blue-5;
+
+$solid-pr-ac-bg: $blue-7;
+$solid-pr-ac-txt: $gray-1;
+$solid-pr-ac-bdr: $blue-7;
+
+$solid-pr-ds-bg: $gray-3;
+$solid-pr-ds-txt: $gray-6;
+$solid-pr-ds-bdr: $gray-5;
+
+////////// Primary Outlined button
+
+$solid-pr-ot-bg: $gray-1;
+$solid-pr-ot-txt: $gray-8;
+$solid-pr-ot-bdr: $gray-5;
+
+$solid-pr-ot-hvr-bg: $gray-1;
+$solid-pr-ot-hvr-txt: $blue-5;
+$solid-pr-ot-hvr-bdr: $blue-5;
+
+$solid-pr-ot-fc-bg: $gray-1;
+$solid-pr-ot-fc-txt: $blue-5;
+$solid-pr-ot-fc-bdr: $blue-5;
+
+$solid-pr-ot-ac-bg: $gray-1;
+$solid-pr-ot-ac-txt: $blue-7;
+$solid-pr-ot-ac-bdr: $blue-7;
+
+$solid-pr-ot-ds-bg: $gray-3;
+$solid-pr-ot-ds-txt: $gray-6;
+$solid-pr-ot-ds-bdr: $gray-5;
+
+////////// Danger button
+
+$solid-danger-bg: $gray-3;
+$solid-danger-txt: $red-6;
+$solid-danger-bdr: $gray-5;
+
+$solid-danger-hvr-bg: $red-5;
+$solid-danger-hvr-txt: $gray-1;
+$solid-danger-hvr-bdr: $red-5;
+
+$solid-danger-fc-bg: $gray-1;
+$solid-danger-fc-txt: $red-5;
+$solid-danger-fc-bdr: $red-5;
+
+$solid-danger-ac-bg: $red-7;
+$solid-danger-ac-txt: $gray-1;
+$solid-danger-ac-bdr: $red-7;
+
+$solid-danger-ds-bg: $gray-3;
+$solid-danger-ds-txt: $gray-6;
+$solid-danger-ds-bdr: $gray-5;
+
+/////////////////// 3.1 Solid Buttons End //////////////////////
+
+/////////////////// 3.2 Ghost Buttons //////////////////////
+
+/////////// Primary button
+
+$ghost-pr-bg: $gray-1;
+$ghost-pr-txt: $blue-6;
+$ghost-pr-bdr: $blue-6;
+
+$ghost-pr-hvr-bg: $gray-1;
+$ghost-pr-hvr-txt: $blue-5;
+$ghost-pr-hvr-bdr: $blue-5;
+
+$ghost-pr-fc-bg: $gray-1;
+$ghost-pr-fc-txt: $blue-5;
+$ghost-pr-fc-bdr: $blue-5;
+
+$ghost-pr-ac-bg: $gray-1;
+$ghost-pr-ac-txt: $blue-7;
+$ghost-pr-ac-bdr: $blue-7;
+
+$ghost-pr-ds-bg: $gray-1;
+$ghost-pr-ds-txt: $gray-5;
+$ghost-pr-ds-bdr: $gray-5;
+
+////////// Primary Outlined button
+
+$ghost-pr-ot-bg: $gray-1;
+$ghost-pr-ot-txt: $gray-8;
+$ghost-pr-ot-bdr: $gray-5;
+
+$ghost-pr-ot-hvr-bg: $gray-1;
+$ghost-pr-ot-hvr-txt: $blue-5;
+$ghost-pr-ot-hvr-bdr: $blue-5;
+
+$ghost-pr-ot-fc-bg: $gray-1;
+$ghost-pr-ot-fc-txt: $blue-5;
+$ghost-pr-ot-fc-bdr: $blue-5;
+
+$ghost-pr-ot-ac-bg: $gray-1;
+$ghost-pr-ot-ac-txt: $blue-7;
+$ghost-pr-ot-ac-bdr: $blue-7;
+
+$ghost-pr-ot-ds-bg: $gray-1;
+$ghost-pr-ot-ds-txt: $gray-6;
+$ghost-pr-ot-ds-bdr: $gray-5;
+
+////////// Danger button
+
+$ghost-danger-bg: $gray-1;
+$ghost-danger-txt: $red-6;
+$ghost-danger-bdr: $red-6;
+
+$ghost-danger-hvr-bg: $gray-1;
+$ghost-danger-hvr-txt: $red-5;
+$ghost-danger-hvr-bdr: $red-5;
+
+$ghost-danger-fc-bg: $gray-1;
+$ghost-danger-fc-txt: $red-5;
+$ghost-danger-fc-bdr: $red-5;
+
+$ghost-danger-ac-bg: $gray-1;
+$ghost-danger-ac-txt: $red-7;
+$ghost-danger-ac-bdr: $red-7;
+
+$ghost-danger-ds-bg: $gray-1;
+$ghost-danger-ds-txt: $gray-6;
+$ghost-danger-ds-bdr: $gray-5;
+
+/////////////////// 3.1 Ghost Buttons End //////////////////////
+
+// Button Padding
+
+$btn-custom-font-size: 0.875rem !default;
+$btn-custom-font-size-sm: 0.875rem !default;
+$btn-custom-font-size-lg: 1rem !default;
+
+$btn-custom-line-height: 1.45 !default;
+$btn-custom-line-height-sm: 1.45 !default;
+$btn-custom-line-height-lg: 1.4 !default;
+
+$btn-custom-border-radius: 4px !default;
+
+$btn-custom-padding-null: 0 !default;
+$btn-custom-padding-y: 0.314rem !default;
+$btn-custom-padding-x: 1rem !default;
+
+$btn-custom-padding-y-sm: 0.064rem !default;
+$btn-custom-padding-x-sm: 0.5rem !default;
+
+$btn-custom-padding-y-lg: 0.5rem !default;
+$btn-custom-padding-x-lg: 1rem !default;
+
+$btn-icon-padding: 0.407rem 0.563rem !default;
+$btn-icon-padding-sm: 0.219rem 0.344rem !default;
+$btn-icon-padding-lg: 0.563rem 0.75rem !default;
+
+$btn-icon-font: 0.75rem !default;
+$btn-icon-font-sm: 0.6875rem !default;
+$btn-icon-font-lg: 0.875rem !default;
+
+$btn-icon-radius: 100% !default;
+
+// 3. Custom Button End /////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 4. Border Radius start ///////////////////////////////////
+$border-radius: 0.25rem !default;
+$border-radius-none: 0 !default;
+$border-radius-lg: 0.25rem !default;
+$border-radius-sm: 0.25rem !default;
+
+$border-radius-top: 0.25rem 0.25rem 0 0 !default;
+$border-radius-right: 0 0.25rem 0.25rem 0 !default;
+$border-radius-bottom: 0 0 0.25rem 0.25rem !default;
+$border-radius-left: 0.25rem 0 0 0.25rem !default;
+// 4. Border Radius End ///////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5. Breadcrumb Start /////////////////////////////////
+
+$breadcrumb-custom-bg: $gray-1 !default;
+$breadcrumb-custom-divider-color: $gray-7 !default;
+$breadcrumb-custom-active-color: $gray-8 !default;
+
+$breadcrumb-custom-border-radius: $border-radius-none !default;
+
+// 5. Breadcrumb End ///////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 6. Dropdown Start /////////////////////////////////
+// Dropdowns
+//
+// Dropdown menu container and contents.
+// 6. Dropdown End ///////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 7. Pagination End ///////////////////////////////////
+
+// Pagination
+
+// 7. Pagination End ///////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 8. Input/Input Number/Textarea Start /////////////////////////////////
+$input-shadow: 0 0 0 2px rgba(24, 144, 255, 0.5) !default;
+$input-error-shadow: 0 0 0 2px rgba(245, 34, 45, 0.5) !default;
+$input-warning-shadow: 0 0 0 2px rgba(250, 173, 20, 0.5) !default;
+$input-number-shadow: 0 0 0 2px rgba(24, 144, 255, 0.5) !default;
+$popover-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15) !default;
+// 8. Input/Input Number/Textarea End ///////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 9. Progress circle Start /////////////////////////////////
+
+$spacing: 1rem;
+$background-color-default: $gray-3;
+$background-color-fill-info: $blue-6;
+$background-color-fill-error: $red-6;
+$background-color-fill-success: $green-6;
+$step: 1;
+$loops: round(100 / $step);
+$increment: 360 / $loops;
+$half: round($loops / 2);
+$size-lg: 7.5rem;
+$size-lg-before: 6.875rem;
+$size-sm: 5rem;
+$size-sm-before: 4.375rem;
+// 9. Progress circle End ///////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 10. Media Query ///////////////////////////////////
+$screen-910: 910px;
+$screen-768: 768px;
+$screen-800: 800px;
+$screen-991: 991px;
+$screen-1024: 1024px;
+$screen-1025: 1025px;
+$screen-1190: 1190px;
+$screen-1191: 1191px;
+$screen-1279: 1279px;
+$screen-1280: 1280px;
+$screen-1281: 1281px;
+$screen-1366: 1366px;
+$screen-1600: 1600px;
+$screen-2500: 2500px;
+// 10. Media Query ///////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 11. New Used Color ///////////////////////////////////
+$blue-11: #1d4ed8;
+$blue-12: #bfdbfe;
+$blue-13: #dbeafe;
+$blue-14: #d1d5db;
+$blue-15: #1f2937;
+$blue-16: #374151;
+$blue-17: #eff6ff;
+$blue-18: #222f3e;
+$blue-19: #93c5fd;
+
+$gray-11: #9ca3af;
+$gray-12: #4b5563;
+$gray-13: #e5e7eb;
+$gray-14: #eaedef;
+$gray-15: #6b7280;
+$gray-16: #f3f4f6;
+$gray-17: #111827;
+$gray-18: #6c6f74;
+$gray-19: #f9fafb;
+$gray-20: #dee0e2;
+$gray-21: #6c7280;
+$gray-22: #ece9f1;
+$gray-23: #d1d5db;
+$gray-24: #212529;
+$gray-25: #f7f8f9;
+
+$purple-11: #ddd6fe;
+$purple-12: #5b21b6;
+$purple-13: #6d28d9;
+$purple-14: #ede9fe;
+
+$green-11: #d1fae5;
+$green-12: #065f46;
+$green-13: #10b981;
+$green-14: #047857;
+$green-15: #a7f3d0;
+$green-16: #059669;
+$green-17: #dafad7;
+$green-18: #0d852b;
+
+$cyan-11: #cffafe;
+
+$orange-11: #fed7aa;
+$orange-12: #b45309;
+$orange-13: #ea580c;
+$orange-14: #d97706;
+
+$red-11: #fecaca;
+$red-12: #b91c1c;
+$red-13: #b80b1f;
+$red-14: #ffd6db;
+$red-15: #f87171;
+$red-16: #b91c1c;
+$red-17: #fef2f2;
+$red-18: #dc2626;
+
+$yellow-11: #fffbeb;
+$yellow-12: #fbbf24;
+
+// 11. New Used Color ///////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// **. Margin/Padding Start /////////////////////////////////
+$mr-5: 5px;
+$mr-10: 10px;
+$mr-15: 15px;
+$mr-20: 20px;
+$mr-30: 30px;
+$no-padding: 0px;
+$no-margin: 0px;
+// **. Margin/Padding End ///////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$popover-arrow-color: #1f2937;

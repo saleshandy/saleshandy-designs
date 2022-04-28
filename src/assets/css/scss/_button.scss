@@ -1,0 +1,624 @@
+////// 3.1 Solid Button Style Start///////////////////
+.btn-solid {
+  display: inline-block;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  text-decoration: if($link-decoration == none, null, none);
+  white-space: $btn-white-space;
+  vertical-align: middle;
+  user-select: none;
+  font-size: $text-14;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  span {
+    &.icon-left {
+      margin-right: 6px;
+    }
+    &.icon-right {
+      margin-left: 6px;
+    }
+  }
+  @include button-size(
+    $btn-custom-padding-y,
+    $btn-custom-padding-x,
+    $btn-custom-font-size,
+    $btn-custom-line-height,
+    $btn-custom-border-radius
+  );
+  @include transition($btn-transition);
+
+  @include hover() {
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  &:not(:disabled):not(.disabled) {
+    cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
+
+    &:active,
+    &.active {
+      @include box-shadow($btn-active-box-shadow);
+
+      &:focus {
+        @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+      }
+    }
+  }
+}
+.btn-solid-lg {
+  @include button-size(
+    $btn-custom-padding-y-lg,
+    $btn-custom-padding-x-lg,
+    $btn-custom-font-size-lg,
+    $btn-custom-line-height-lg,
+    $btn-custom-border-radius
+  );
+}
+
+.btn-solid-sm {
+  @include button-size(
+    $btn-custom-padding-y-sm,
+    $btn-custom-padding-x-sm,
+    $btn-custom-font-size-sm,
+    $btn-custom-line-height-sm,
+    $btn-custom-border-radius
+  );
+}
+.btn-solid-default {
+  @include button-variant(
+    $solid-df-bg,
+    $solid-df-bdr,
+    $solid-df-hvr-bg,
+    $solid-df-hvr-bdr,
+    $solid-df-ac-bg,
+    $solid-df-ac-bdr
+  );
+  color: $solid-df-txt;
+  &:hover,
+  &.hover {
+    color: $solid-df-hvr-txt;
+  }
+  &:focus,
+  &.focus {
+    color: $solid-df-fc-txt;
+    @include gradient-bg($solid-df-hvr-bg);
+    border-color: $solid-df-hvr-bdr;
+    @if $enable-shadows {
+      @include box-shadow(none);
+    } @else {
+      box-shadow: none;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $solid-df-ds-txt;
+    background-color: $solid-df-ds-bg;
+    border: 1px solid $solid-df-ds-bdr;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow(none);
+      } @else {
+        box-shadow: none;
+      }
+    }
+  }
+}
+.btn-solid-primary {
+  @include button-variant(
+    $solid-pr-bg,
+    $solid-pr-bdr,
+    $solid-pr-hvr-bg,
+    $solid-pr-hvr-bdr,
+    $solid-pr-ac-bg,
+    $solid-pr-ac-bdr
+  );
+
+  &:focus,
+  &.focus {
+    color: $solid-pr-fc-txt;
+    @include gradient-bg($solid-pr-hvr-bg);
+    border-color: $solid-pr-hvr-bdr;
+    @if $enable-shadows {
+      @include box-shadow(none);
+    } @else {
+      box-shadow: none;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $solid-pr-ds-txt;
+    background-color: $solid-pr-ds-bg;
+    border: 1px solid $solid-pr-ds-bdr;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow(none);
+      } @else {
+        box-shadow: none;
+      }
+    }
+  }
+}
+.btn-solid-outlined {
+  @include button-outline-variant(
+    $solid-pr-ot-txt,
+    $solid-pr-ot-hvr-txt,
+    $solid-pr-ot-ac-bg,
+    $solid-pr-ot-ac-bdr
+  );
+  border-color: $solid-pr-ot-bdr;
+
+  @include hover() {
+    border-color: $solid-pr-ot-hvr-bdr;
+  }
+
+  &:focus,
+  &.focus {
+    color: $solid-pr-ot-fc-txt;
+    background-color: $solid-pr-ot-fc-bg;
+    border-color: $solid-pr-ot-fc-bdr;
+    box-shadow: none;
+  }
+  &.disabled,
+  &:disabled {
+    color: $solid-pr-ot-ds-txt;
+    background-color: $solid-pr-ot-ds-bg;
+    border: 1px solid $solid-pr-ot-ds-bdr;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $solid-pr-ot-ac-txt;
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow(none);
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: none;
+      }
+    }
+  }
+}
+.btn-solid-dashed {
+  @include button-outline-variant(
+    $solid-pr-ot-txt,
+    $solid-pr-ot-hvr-txt,
+    $solid-pr-ot-ac-bg,
+    $solid-pr-ot-ac-bdr
+  );
+  border-color: $solid-pr-ot-bdr;
+  border-style: dashed;
+  @include hover() {
+    border-color: $solid-pr-ot-hvr-bdr;
+    border-style: dashed;
+  }
+
+  &:focus,
+  &.focus {
+    color: $solid-pr-ot-fc-txt;
+    background-color: $solid-pr-ot-fc-bg;
+    border-color: $solid-pr-ot-fc-bdr;
+    border-style: dashed;
+    box-shadow: none;
+  }
+  &.disabled,
+  &:disabled {
+    color: $solid-pr-ot-ds-txt;
+    background-color: $solid-pr-ot-ds-bg;
+    border: 1px dashed $solid-pr-ot-ds-bdr;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $solid-pr-ot-ac-txt;
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow(none);
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: none;
+      }
+    }
+  }
+}
+.btn-solid-danger {
+  @include button-variant(
+    $solid-danger-bg,
+    $solid-danger-bdr,
+    $solid-danger-hvr-bg,
+    $solid-danger-hvr-bdr,
+    $solid-danger-ac-bg,
+    $solid-danger-ac-bdr
+  );
+  color: $solid-danger-txt;
+  &:focus,
+  &.focus {
+    @if $enable-shadows {
+      @include box-shadow(none);
+    } @else {
+      box-shadow: none;
+    }
+  }
+  @include hover() {
+    color: $solid-danger-hvr-txt;
+    background-color: $solid-danger-hvr-bg;
+    text-decoration: none;
+  }
+  &.disabled,
+  &:disabled {
+    color: $solid-danger-ds-txt;
+    background-color: $solid-danger-ds-bg;
+    border: 1px solid $solid-danger-ds-bdr;
+  }
+  &.active,
+  &:active {
+    color: $solid-danger-ac-txt;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow(none);
+      } @else {
+        box-shadow: none;
+      }
+    }
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.btn-loading {
+  > span {
+    display: inline-flex;
+    align-items: center;
+    i.icon-loading {
+      animation: spin 2s linear infinite;
+    }
+  }
+  &.btn-solid-primary {
+    &.disabled,
+    &:disabled {
+      color: $solid-pr-hvr-txt;
+      background-color: $solid-pr-hvr-bg;
+      border: 1px solid $solid-pr-hvr-bdr;
+    }
+  }
+}
+////// 1.1 Solid Button Style End ///////////////////
+
+////// 3.2 Ghost Button Style Start///////////////////
+.btn-ghost {
+  display: inline-block;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  //color: $body-color;
+  font-size: $text-14;
+  text-align: center;
+  text-decoration: if($link-decoration == none, null, none);
+  white-space: $btn-white-space;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  @include button-size(
+    $btn-custom-padding-y,
+    $btn-custom-padding-x,
+    $btn-custom-font-size,
+    $btn-custom-line-height,
+    $btn-custom-border-radius
+  );
+  @include transition($btn-transition);
+
+  @include hover() {
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  &:not(:disabled):not(.disabled) {
+    cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
+
+    &:active,
+    &.active {
+      @include box-shadow($btn-active-box-shadow);
+
+      &:focus {
+        @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+      }
+    }
+  }
+}
+.btn-ghost-lg {
+  @include button-size(
+    $btn-custom-padding-y-lg,
+    $btn-custom-padding-x-lg,
+    $btn-custom-font-size-lg,
+    $btn-custom-line-height-lg,
+    $btn-custom-border-radius
+  );
+}
+
+.btn-ghost-sm {
+  @include button-size(
+    $btn-custom-padding-y-sm,
+    $btn-custom-padding-x-sm,
+    $btn-custom-font-size-sm,
+    $btn-custom-line-height-sm,
+    $btn-custom-border-radius
+  );
+}
+.btn-ghost-primary {
+  @include button-variant(
+    $ghost-pr-bg,
+    $ghost-pr-bdr,
+    $ghost-pr-hvr-bg,
+    $ghost-pr-hvr-bdr,
+    $ghost-pr-ac-bg,
+    $ghost-pr-ac-bdr
+  );
+  color: $ghost-pr-txt;
+
+  @include hover() {
+    color: $ghost-pr-hvr-txt;
+    text-decoration: none;
+  }
+  &:focus,
+  &.focus {
+    color: $ghost-pr-fc-txt;
+    @include gradient-bg($ghost-pr-hvr-bg);
+    border-color: $ghost-pr-hvr-bdr;
+    @if $enable-shadows {
+      @include box-shadow(none);
+    } @else {
+      box-shadow: none;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $ghost-pr-ds-txt;
+    background-color: $ghost-pr-ds-bg;
+    border: 1px solid $ghost-pr-ds-bdr;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $ghost-pr-ac-txt;
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow(none);
+      } @else {
+        box-shadow: none;
+      }
+    }
+  }
+}
+.btn-ghost-outlined {
+  @include button-outline-variant(
+    $ghost-pr-ot-txt,
+    $ghost-pr-ot-hvr-txt,
+    $ghost-pr-ot-ac-bg,
+    $ghost-pr-ot-ac-bdr
+  );
+  border-color: $ghost-pr-ot-bdr;
+  color: $ghost-pr-ot-txt;
+  @include hover() {
+    border-color: $ghost-pr-ot-hvr-bdr;
+    color: $ghost-pr-ot-hvr-txt;
+  }
+
+  &:focus,
+  &.focus {
+    color: $ghost-pr-ot-fc-txt;
+    background-color: $ghost-pr-ot-fc-bg;
+    border-color: $ghost-pr-ot-fc-bdr;
+    box-shadow: none;
+  }
+  &.disabled,
+  &:disabled {
+    color: $ghost-pr-ot-ds-txt;
+    background-color: $ghost-pr-ot-ds-bg;
+    border: 1px solid $ghost-pr-ot-ds-bdr;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $ghost-pr-ot-ac-txt;
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow(none);
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: none;
+      }
+    }
+  }
+}
+.btn-ghost-dashed {
+  @include button-outline-variant(
+    $ghost-pr-ot-txt,
+    $ghost-pr-ot-hvr-txt,
+    $ghost-pr-ot-ac-bg,
+    $ghost-pr-ot-ac-bdr
+  );
+  border-color: $ghost-pr-ot-bdr;
+  border-style: dashed;
+  @include hover() {
+    border-color: $ghost-pr-ot-hvr-bdr;
+    border-style: dashed;
+  }
+
+  &:focus,
+  &.focus {
+    color: $ghost-pr-ot-fc-txt;
+    background-color: $ghost-pr-ot-fc-bg;
+    border-color: $ghost-pr-ot-fc-bdr;
+    border-style: dashed;
+    box-shadow: none;
+  }
+  &.disabled,
+  &:disabled {
+    color: $ghost-pr-ot-ds-txt;
+    background-color: $ghost-pr-ot-ds-bg;
+    border: 1px dashed $ghost-pr-ot-ds-bdr;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $ghost-pr-ot-ac-txt;
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow(none);
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: none;
+      }
+    }
+  }
+}
+.btn-ghost-danger {
+  @include button-variant(
+    $ghost-danger-bg,
+    $ghost-danger-bdr,
+    $ghost-danger-hvr-bg,
+    $ghost-danger-hvr-bdr,
+    $ghost-danger-ac-bg,
+    $ghost-danger-ac-bdr
+  );
+  color: $ghost-danger-txt;
+  &:focus,
+  &.focus {
+    color: $ghost-danger-fc-txt;
+    @if $enable-shadows {
+      @include box-shadow(none);
+    } @else {
+      box-shadow: none;
+    }
+  }
+  @include hover() {
+    color: $ghost-danger-hvr-txt;
+    background-color: $ghost-danger-hvr-bg;
+    text-decoration: none;
+  }
+  &.disabled,
+  &:disabled {
+    color: $ghost-danger-ds-txt;
+    background-color: $ghost-danger-ds-bg;
+    border: 1px solid $ghost-danger-ds-bdr;
+  }
+  &.active,
+  &:active {
+    color: $ghost-danger-ac-txt;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $ghost-danger-ac-txt;
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow(none);
+      } @else {
+        box-shadow: none;
+      }
+    }
+  }
+}
+////// 3.2 Ghost Button Style End///////////////////
+
+.btn-icon {
+  padding: $btn-icon-padding;
+  font-size: $btn-icon-font;
+  border-radius: $btn-icon-radius;
+  width: 2rem;
+  height: 2rem;
+}
+.btn-icon-lg {
+  padding: $btn-icon-padding-lg;
+  font-size: $btn-icon-font-lg;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.btn-icon-sm {
+  padding: $btn-icon-padding-sm;
+  font-size: $btn-icon-font-sm;
+  border-radius: $btn-icon-radius;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.btn-linked-default {
+  border: 0;
+  background: none;
+  font-size: $text-12;
+  line-height: $text-style-1-line-height;
+  font-weight: $font-weight-semibold;
+  color: $gray-7;
+  &:hover {
+    color: $gray-9;
+  }
+  &.disabled,
+  &:disabled {
+    border: 0;
+    background: none;
+    color: $gray-9;
+    opacity: 0.2;
+  }
+}
+.btn-linked-primary {
+  border: 0;
+  background: none;
+  color: $blue-6;
+  font-size: $text-12;
+  line-height: $text-style-1-line-height;
+  font-weight: $font-weight-semibold;
+  &.disabled,
+  &:disabled {
+    border: 0;
+    background: none;
+    color: $blue-6;
+    opacity: 0.2;
+  }
+}

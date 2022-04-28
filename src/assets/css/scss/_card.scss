@@ -1,0 +1,31 @@
+.card {
+  border: 1px solid $gray-14;
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  .card-header {
+    border-bottom: 1px solid $gray-14;
+    &:first-child {
+      border-radius: calc(0.5rem - 1px) calc(0.5rem - 1px) 0 0;
+    }
+  }
+  .card-title {
+    color: $popover-arrow-color;
+    text-transform: capitalize;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+  .card-body {
+    padding: 0.25rem 0px;
+    flex: 1 1 auto;
+    -webkit-box-flex: 1;
+  }
+  .card-footer {
+    border-top: 1px solid $gray-14;
+    &:last-child {
+      border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+    }
+  }
+}
+.card-no-border {
+  border: 0;
+}
