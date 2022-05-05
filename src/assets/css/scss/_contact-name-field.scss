@@ -1,0 +1,39 @@
+.contact-field-name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 2.7rem;
+  .name-field {
+    color: $popover-arrow-color;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  .email-field {
+    display: flex;
+    align-items: center;
+    color: $gray-12;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  .email-only-field {
+    display: flex;
+    align-items: center;
+    color: $gray-9;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    height: 1.35rem;
+    cursor: pointer;
+  }
+}

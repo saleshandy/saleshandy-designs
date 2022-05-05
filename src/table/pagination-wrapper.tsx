@@ -1,5 +1,5 @@
-import React from 'react';
-import Pagination from '../../pagination';
+import React from "react";
+import Pagination from "../pagination";
 
 const PaginationWrapper: React.FC<any> = (props) => {
   const { dataSize, page, onPageChange } = props;

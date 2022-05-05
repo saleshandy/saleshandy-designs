@@ -16,13 +16,13 @@ import {
 import { Switch } from "../switch";
 import { Checkbox } from "../checkbox";
 import IconText from "../icon-text";
-import TextStacksDirectional from "../../molecules/text-stacks-directional";
+import { TextStacksDirectional } from "../text-stacks-directional";
 import PaginationWrapper from "./pagination-wrapper";
-import ContactNameField from "../../molecules/contact-name-field";
-import { difference } from "../../../../utils/set";
-import { SequenceNameField } from "../../molecules/sequence-name-field";
-import { TeamMemberNameField } from "../../molecules/team-member-name-field";
-import { OverlayTooltip } from "../../overlay";
+import ContactNameField from "../contact-name-field";
+import { difference } from "../utils/set";
+import { SequenceNameField } from "../sequence-name-field";
+import { TeamMemberNameField } from "../team-member-name-field";
+import { OverlayTooltip } from "../overlay";
 import { constants } from "../types/enum";
 import { ImageIcon } from "../image-icon";
 import { Images } from "../utils/images";
@@ -40,13 +40,13 @@ class Table extends React.Component<IProps, IState> {
     this.getCoreComponent = this.getCoreComponent.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: any) {
     if (prevProps.resetSelected) {
       this.onSelectedRowsUpdate([]);
     }
   }
 
-  onSelectedRowsUpdate(value) {
+  onSelectedRowsUpdate(value: any[]) {
     this.setState({ selectedRows: value });
   }
 
@@ -77,7 +77,7 @@ class Table extends React.Component<IProps, IState> {
     } else {
       this.setState(
         () => ({
-          selectedRows: selectedRows.filter((x) => x !== row.id),
+          selectedRows: selectedRows.filter((x: any) => x !== row.id),
         }),
         () => {
           !!onRowSelect && onRowSelect(row, isSelect);
@@ -87,7 +87,7 @@ class Table extends React.Component<IProps, IState> {
   }
 
   onRowSelectAllHandler(isSelect: boolean, rows: any) {
-    const ids = rows.map((r) => r.id);
+    const ids = rows.map((r: { id: any }) => r.id);
     const { selectedRows } = this.state;
     const { onRowSelectAll } = this.props;
 
@@ -220,7 +220,11 @@ class Table extends React.Component<IProps, IState> {
           }
           return null;
         },
-        headerFormatter: (column, _colIndex, { sortElement }) => {
+        headerFormatter: (
+          column: any,
+          _colIndex: any,
+          { sortElement }: any
+        ) => {
           return (
             <div className='d-flex'>
               <span className='semibold-1 gray-txt-12'>{column.text}</span>
@@ -236,7 +240,7 @@ class Table extends React.Component<IProps, IState> {
             </div>
           );
         },
-        formatter: (cell, row) => {
+        formatter: (cell: any, row: any) => {
           if (typeof component === "string") {
             return this.getCoreComponent(
               component,
@@ -259,11 +263,11 @@ class Table extends React.Component<IProps, IState> {
       };
     });
 
-  generateDropdownItemsListFromActions = (actions: Action[], row) => {
+  generateDropdownItemsListFromActions = (actions: Action[], row: any) => {
     const { onAction } = this.props;
 
-    const dropdownItems = [];
-    const gridItems = [];
+    const dropdownItems: JSX.Element[] = [];
+    const gridItems: JSX.Element[] = [];
     let index = 0;
     actions.forEach((action) => {
       if (action.position === "out") {
@@ -300,14 +304,14 @@ class Table extends React.Component<IProps, IState> {
   };
 
   generateActionsColumn = (
-    actions,
-    headerVisibleForGenerateColumn,
-    borderOverActions
+    actions: Action[] | ((cell: any, row: any) => Action[]),
+    headerVisibleForGenerateColumn: boolean,
+    borderOverActions: boolean
   ) => ({
     dataField: "actions",
     text: "Actions",
     headerClasses: "bs-table-thead",
-    formatter: (cell, row) => {
+    formatter: (cell: any, row: any) => {
       const generatedDropdownItemsListFromActions =
         typeof actions === "function"
           ? this.generateDropdownItemsListFromActions(actions(cell, row), row)
@@ -349,7 +353,7 @@ class Table extends React.Component<IProps, IState> {
       : { borderTop: "none" },
   });
 
-  handleTableChange = (type, { page, sizePerPage }) => {
+  handleTableChange = (type: string, { page, sizePerPage }: any) => {
     if (type === "pagination") {
       const { onPaginationOptionsChange } = this.props;
       onPaginationOptionsChange({ page, limit: sizePerPage });
@@ -385,7 +389,7 @@ class Table extends React.Component<IProps, IState> {
           ),
         ]
       : dataColumns;
-    let totalSize;
+    let totalSize: number;
     if (paginationOptions.pagesCount) {
       totalSize = paginationOptions.count;
     } else {
@@ -394,7 +398,7 @@ class Table extends React.Component<IProps, IState> {
     if (!totalSize) {
       totalSize = constants.DEFAULT_PAGE_SIZE;
     }
-    let paginationShow = null;
+    let paginationShow: boolean = null;
     switch (pagination) {
       case PaginationShowHide.HIDE:
         paginationShow = false;

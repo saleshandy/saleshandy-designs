@@ -1,0 +1,47 @@
+.text-stack-container {
+  display: flex;
+  max-width: 3.75rem;
+  flex-direction: column;
+  min-width: 3.75rem;
+  align-items: center;
+  margin: 0.2rem;
+  .label {
+    color: $gray-7;
+    font-size: $text-12;
+    line-height: $text-style-1-line-height;
+  }
+  .value {
+    color: $gray-8;
+    font-size: $text-16;
+    line-height: $text-style-3-line-height;
+    font-weight: $font-weight-semibold;
+  }
+
+  .emailsSent {
+    color: #1d4ed8;
+  }
+
+  .opened {
+    color: #0891b2;
+  }
+
+  .replied {
+    color: #047857;
+  }
+
+  .clicked {
+    color: #6d28d9;
+  }
+
+  .unsubscribed {
+    color: #b91c1c;
+  }
+
+  .bounced {
+    color: #d97706;
+  }
+}
+
+.text-stack-container-report {
+  align-items: flex-start;
+}
