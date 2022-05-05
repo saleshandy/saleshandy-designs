@@ -1,0 +1,13 @@
+.icon-text-container {
+  display: flex;
+  max-width: 3.75rem;
+  min-width: 3.75rem;
+  justify-content: space-around;
+  margin: 0.2rem;
+  .text {
+    color: #1F2937;
+    font-size: $text-14;
+    line-height: $text-style-1-line-height;
+    font-weight: $font-weight-semibold;
+  }
+}

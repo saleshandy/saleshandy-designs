@@ -1,0 +1,223 @@
+.table-list {
+  position: relative;
+  height: calc(100vh - 218px);
+  overflow-y: auto;
+  overflow-x: auto;
+  .bs-table-small .bs-table-tbody td {
+    &.selection-cell {
+      width: 1.875rem;
+    }
+  }
+
+  .bs-table-small .bs-table-thead > tr > th {
+    font-weight: $font-weight-semibold;
+    &.selection-cell-header {
+      width: 1.875rem;
+    }
+    &.th-center {
+      text-align: center;
+    }
+  }
+  .bs-table-tbody {
+    tr {
+      &:last-child {
+        td {
+          border-bottom: 0;
+        }
+      }
+      &:first-child {
+        td {
+          border-bottom: 1px solid #e8e8e8;
+        }
+      }
+    }
+  }
+  .table-switch {
+    label {
+      margin-bottom: 0;
+    }
+  }
+  .grid-action {
+    .btn-solid {
+      padding: 0.2rem 0.1rem;
+      i {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .grid-flex {
+    display: flex;
+    justify-content: space-evenly;
+    :hover {
+      cursor: pointer;
+    }
+    align-items: center;
+  }
+  .react-bootstrap-table {
+    .table-organism.table {
+      border-collapse: collapse !important;
+    }
+    .table-organism {
+      .table-organism-header > tr > th {
+        font-weight: $font-weight-normal;
+        background-color: transparent;
+        border: none;
+        white-space: nowrap;
+      }
+      .table-organism-header {
+        border: none;
+        background-color: #f3f4f6;
+        position: sticky;
+        top: 0%;
+        z-index: 1;
+
+        th {
+          color: #6b7280;
+        }
+      }
+      .table-organism-body {
+        td {
+          vertical-align: middle !important;
+          border: none;
+        }
+        .text-container {
+          width: 10.5rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin: 0;
+        }
+      }
+      .sortable-custom {
+        div span {
+          border-radius: 3px;
+          padding: 0.2rem 0.5rem;
+          i {
+            font-weight: $font-weight-semibold;
+            color: $gray-700;
+          }
+        }
+        div:hover {
+          text-decoration: inherit;
+          transition-duration: 0s, 0.15s;
+          color: rgb(66, 82, 110) !important;
+          cursor: pointer;
+          span {
+            background: $gray-5;
+            visibility: visible !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table-list::-webkit-scrollbar {
+  width: 7px;
+  margin-right: 4px;
+}
+
+.table-list::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #e5e7eb;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #d1d5db;
+  z-index: 10;
+  background: $gray-19;
+  height: 3.125rem;
+  margin-top: -1rem;
+  .page-record-count {
+    display: flex;
+    align-items: center;
+    label {
+      color: $gray-9;
+      margin: 0;
+    }
+    .dropdown-toggle-custom {
+      border: 1px solid $gray-5;
+      padding: 0.314rem 0.5rem;
+    }
+    .dropdown-menu-custom {
+      width: auto;
+      min-width: 5rem;
+    }
+  }
+  .pagination-count {
+    .pagination {
+      margin: 0;
+    }
+  }
+
+  padding: 1.125rem 1.5rem;
+  background: $gray-19;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+
+  .pagination-row {
+    align-items: center;
+    & > span {
+      color: $blue-15;
+    }
+  }
+  .pagination {
+    margin: 0px 1.875rem;
+    .page-item {
+      .page-link {
+        color: $blue-15;
+        padding: 0;
+        font-size: 0.875rem;
+        min-width: 1.4375rem;
+        min-height: 1.5rem;
+        border-radius: 0.25rem;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+
+        &:hover {
+          background: $blue-13;
+          color: $blue-11;
+          border: none;
+          border-color: transparent;
+        }
+      }
+      &.disabled {
+        &:first-of-type,
+        &:last-of-type {
+          .page-link {
+            color: $blue-15;
+            opacity: 0.32;
+          }
+        }
+      }
+      &.disabled.active {
+        &:first-of-type,
+        &:last-of-type {
+          .page-link {
+            background-color: transparent;
+          }
+        }
+      }
+      &.active {
+        .page-link {
+          background: $blue-13;
+          color: $blue-11;
+          border: none;
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}
+.table-sort-tooltip {
+  flex-wrap: nowrap;
+  .arrow {
+    display: none !important;
+  }
+}

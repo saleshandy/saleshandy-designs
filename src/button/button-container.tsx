@@ -1,6 +1,6 @@
 import * as React from "react";
 import Button, { Type, Theme, Variant, Size, ButtonProps } from "./button";
-import Icon from "../icon/icon";
+import { Icon } from "../icon";
 import classNames from "classnames";
 import { Modify } from "../types/modify";
 import { ForwardRef } from "../types/forward-ref";

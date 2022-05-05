@@ -1,0 +1,47 @@
+.bs-modal-container {
+  .bs-modal-body {
+    padding: 1.5rem;
+    max-height: calc(90vh - 7rem);
+  }
+
+  .bs-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &.footer-with-content {
+      justify-content: space-between;
+    }
+
+    &.hidden-button {
+      justify-content: space-between;
+    }
+
+    .bs-modal-footer-action-buttons {
+      button {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &.modal-with-sidebar {
+    .modal-content {
+      flex-direction: row;
+      background-color: transparent;
+      box-shadow: none;
+      .modal-content-container,
+      .modal-sidebar {
+        border-radius: 0.5rem;
+        background-color: $white;
+      }
+      .modal-content-container {
+        width: 56.25rem;
+      }
+      .modal-sidebar {
+        width: 18.75rem;
+        min-height: 90vh;
+        margin-left: 0.125rem;
+      }
+    }
+  }
+}

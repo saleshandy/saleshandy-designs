@@ -2,7 +2,7 @@ import { InputIconConfig } from "./types";
 import React from "react";
 import classNames from "classnames";
 import { IconPlace } from "./enums";
-import Icon from "../icon";
+import { Icon } from "../icon";
 
 type InputIconProps = {
   icon: InputIconConfig;

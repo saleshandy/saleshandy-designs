@@ -5,3 +5,5 @@ export * from "./icon";
 export * from "./image-icon";
 export * from "./input";
 export * from "./switch";
+export * from "./modal";
+export * from "./toaster";
